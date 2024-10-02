@@ -1,0 +1,29 @@
+.btns {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: fit-content;
+  margin-top: 8%;
+  .next-btn {
+    font-family: $primary-ubuntu-font;
+  }
+  .submit-btn {
+    // overriding angular material submit btn colors
+    background-color: $primary-purplish-blue-color !important;
+    color: $neutral-white-color !important;
+    font-family: $primary-ubuntu-font;
+  }
+  .bold-btn {
+    background-color: transparent;
+    border-width: 0px;
+    color: $neutral-cool-gray-color;
+    font-family: $primary-ubuntu-font;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    &:hover {
+      color: $primary-marine-blue-color;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<div class="confirmation-wrapper column-flexed-wrapper">
+  <div class="colored-wrapper column-flexed-wrapper">
+    <div class="first-sub-colored-wrapper">
+      <div class="column-flexed-wrapper">
+        <h4>
+          {{ summary.plansForm.plan }}
+          <span>{{
+            !summary.plansForm.checkboxSwitch ? "(Yearly)" : "(Monthly)"
+          }}</span>
+        </h4>
+        <a href="#">Change</a>
+      </div>
+      <span class="plan-cost"
+        >${{ planCost }}/{{
+          !summary.plansForm.checkboxSwitch ? "yr" : "mo"
+        }}</span
+      >
+    </div>
+    <hr />
+    <div class="second-sub-colored-wrapper" *ngFor="let item of onsData">
+      <span class="chosen-ons-name">{{ item.optionName }}</span>
+      <span class="chosen-ons-cost"> {{ item.value }}</span>
+    </div>
+  </div>
+  <div class="total-cost-wrapper">
+    <span class="sub-type gray-ons"
+      >Total (per
+      {{ !summary.plansForm.checkboxSwitch ? "year" : "month" }})</span
+    >
+    <span class="total-cost"
+      >${{
+        !summary.plansForm.checkboxSwitch
+          ? totalCost + "/yr"
+          : totalCost + "/mo"
+      }}</span
+    >
+  </div>
+</div>

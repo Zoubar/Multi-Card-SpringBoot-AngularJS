@@ -1,0 +1,15 @@
+.column-flexed-wrapper {
+  display: flex;
+  flex-direction: column;
+  .first-step-label {
+    color: $primary-marine-blue-color;
+    margin-bottom: 0.8rem;
+  }
+}
+
+.blue {
+  color: $primary-marine-blue-color;
+}
+.gray {
+  color: $neutral-cool-gray-color;
+}

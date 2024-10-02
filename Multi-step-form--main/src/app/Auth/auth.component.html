@@ -1,0 +1,79 @@
+<div class="auth-wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar-container">
+    <ul>
+      <li
+        *ngFor="let step of formservice.stepsData; let i = index"
+        [ngClass]="{ active: i + 1 === currentStep }"
+      >
+        <span class="step-number">{{ i + 1 }}</span>
+        <div class="step-descriprion">
+          <span>step {{ i + 1 }}</span>
+          <h3>{{ step.stepTitle }}</h3>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="right-side-container">
+    <ng-container *ngIf="subscriptionSucceeded">
+      <app-success></app-success>
+    </ng-container>
+
+    <ng-container *ngIf="!subscriptionSucceeded">
+      <header>
+        <h1>
+          {{ formservice.stepsData[currentStep - 1].heading }}
+        </h1>
+        <p>
+          {{ formservice.stepsData[currentStep - 1].instruction }}
+        </p>
+      </header>
+      <!-- Subscription Form -->
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onConfirm()"
+        class="column-flexed-wrapper subForm"
+      >
+        <!-- Dynamic Components -->
+        <!-- first step -->
+        <ng-container *ngIf="currentStep === 1">
+          <app-personal-info [form]="form"></app-personal-info>
+        </ng-container>
+        <!-- second Step -->
+        <ng-container *ngIf="currentStep === 2">
+          <app-plans [form]="form"></app-plans>
+        </ng-container>
+        <!-- third step -->
+        <ng-container *ngIf="currentStep === 3">
+          <app-ons [form]="form"></app-ons>
+        </ng-container>
+        <!-- Fourth Step -->
+        <ng-container *ngIf="currentStep === 4">
+          <app-confirmation [summary]="form.value"></app-confirmation>
+        </ng-container>
+        <div class="btns">
+          <button
+            type="button"
+            [disabled]="currentStep === 2 && form.value.plansForm.plan === null"
+            (click)="onNext()"
+            [class]="currentStep < 4 ? 'next-btn' : 'submit-btn'"
+            mat-raised-button
+            color="primary"
+          >
+            {{ currentStep === 4 ? "Confirm" : "Next Step" }}
+          </button>
+          <button
+            class="bold-btn"
+            *ngIf="currentStep > 1"
+            type="button"
+            (click)="onBack()"
+          >
+            Go Back
+          </button>
+        </div>
+      </form>
+    </ng-container>
+  </div>
+</div>

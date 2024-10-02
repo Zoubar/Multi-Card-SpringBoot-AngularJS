@@ -1,0 +1,441 @@
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+@import "./abstracts/functions";
+
+@import "./base/reset";
+@import "./base/typography";
+@import "./base/helpers";
+
+@import "./components/buttons";
+@import "./components/slider";
+
+@import "./layout/footer";
+@import "./layout/forms";
+@import "./layout/header";
+@import "./layout/navigation";
+@import "./layout/sidebar";
+
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/home";
+
+html {
+  font-size: 10px;
+  body {
+    margin: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    font-family: $primary-ubuntu-font;
+    padding: 1rem;
+    .auth-wrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-color: $neutral-white-color;
+      .right-side-container {
+        padding: 4% 16%;
+        width: 56%;
+        height: 84%;
+        header {
+          margin-bottom: 4rem;
+        }
+        .subForm {
+          justify-content: space-between;
+          // First Step Wrapper
+          .first-step-form-wrapper {
+            height: 25rem;
+            justify-content: space-between;
+            .form-field {
+              width: 100%;
+              position: relative;
+              .input-field {
+                font: 1.6rem $primary-ubuntu-font;
+                color: $primary-marine-blue-color;
+              }
+              .phone-prefix {
+                padding-left: 1rem;
+              }
+            }
+          }
+          // Second Step Wrapper
+          form {
+            .plans-container {
+              gap: 4rem;
+              .plans-label-container {
+                display: flex;
+                width: 100%;
+                margin: 0 auto;
+                gap: 2rem;
+                .radio-wrapper {
+                  width: 31%;
+                  .radio-input {
+                    opacity: 0;
+                  }
+
+                  img {
+                    width: 5rem;
+                    margin: 2.2rem auto 5.3rem 1.5rem;
+                  }
+
+                  .radio-input:checked {
+                    & + .radio-label {
+                      background-color: $neutral-magnolia-color;
+                      border: 0.1rem solid $primary-marine-blue-color;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          // Third Step Wrapper
+          .ons-wrapper {
+            display: flex;
+            flex-direction: row;
+            background-color: $neutral-white-color;
+            gap: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            cursor: pointer;
+            .ons-label {
+              cursor: pointer;
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              width: 100%;
+              border: 0.1rem solid $neutral-cool-gray-color;
+              border-radius: 1rem;
+              height: 8rem;
+            }
+            input {
+              width: 1.8rem;
+              cursor: pointer;
+              position: absolute;
+              margin: 3.3rem 2rem;
+            }
+            input:checked {
+              & + .ons-label {
+                border: 0.1rem solid $primary-marine-blue-color;
+                background-color: $neutral-magnolia-color;
+                border-radius: 1rem;
+              }
+            }
+
+            .ons-spans-wrapper {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              margin-left: 8rem;
+              width: 80%;
+              .ons-text-wrapper {
+                justify-content: center;
+              }
+            }
+          }
+          // Fourth Step
+          .confirmation-wrapper {
+            border-radius: 0.5rem;
+            width: 100%;
+            height: 25rem;
+            justify-content: space-between;
+            .colored-wrapper {
+              background-color: $neutral-magnolia-color;
+              width: 100%;
+              height: fit-content;
+              border-radius: 1rem;
+
+              .first-sub-colored-wrapper {
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                margin: 0 auto;
+                padding: 1rem;
+              }
+              hr {
+                width: 87%;
+                color: $neutral-light-gray-color;
+              }
+              .second-sub-colored-wrapper {
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                margin: 0 auto;
+                padding: 1rem;
+                .chosen-ons-name {
+                  font: 1.4rem $primary-ubuntu-font;
+                  color: $neutral-cool-gray-color;
+                }
+                .chosen-ons-cost {
+                  font: 1.4rem $primary-ubuntu-font;
+                  color: $primary-marine-blue-color;
+                }
+              }
+            }
+            .total-cost-wrapper {
+              height: 4rem;
+              display: flex;
+              justify-content: space-between;
+              width: 90%;
+              margin: 2rem auto;
+            }
+          }
+        }
+        // success message
+        .thanking-msg-wrapper {
+          width: 100%;
+          margin: 9rem 0rem;
+          text-align: center;
+          img {
+            width: 8rem;
+            margin: 0 auto;
+          }
+          h1 {
+            font: 700 3rem $primary-ubuntu-font;
+            color: $primary-marine-blue-color;
+            margin: 4.5rem 0rem 2rem 0rem;
+          }
+          p {
+            color: $neutral-cool-gray-color;
+            font: 2rem $primary-ubuntu-font;
+          }
+        }
+      }
+    }
+  }
+}
+
+// bigger screens Desktop
+@media only screen and (min-width: 1365px) {
+  html {
+    font-size: 13px;
+  }
+  .step-number {
+    padding: 0.8rem 1.1rem !important;
+  }
+}
+@media only screen and (min-width: 1679px) {
+  html {
+    font-size: 15px;
+  }
+  .step-number {
+    padding: 0.8rem 1rem !important;
+  }
+}
+@media only screen and (min-width: 1919px) {
+  html {
+    font-size: 17px;
+  }
+  .step-number {
+    padding: 0.8rem 1rem !important;
+  }
+}
+
+// Tablet Media Queries
+@media only screen and (max-width: 769px) {
+  html {
+    font-size: 9px;
+    body {
+      padding: 0rem;
+      .auth-wrapper {
+        flex-direction: column;
+        background-color: $neutral-magnolia-color;
+        // sidebar
+        .sidebar-container {
+          width: 100%;
+          height: 18.5%;
+          background-image: url(../images/bg-sidebar-mobile.svg);
+          ul {
+            display: flex;
+            gap: 5%;
+            padding: 2rem 0rem 0rem;
+            width: 40%;
+            justify-content: center;
+            margin: 0 auto;
+            .step-number {
+              padding: 1.6rem 2.4rem;
+            }
+            .step-descriprion {
+              display: none;
+            }
+          }
+        }
+        .right-side-container {
+          background-color: $neutral-white-color;
+          width: 83%;
+          height: 50%;
+          padding: 3rem 2rem;
+          margin: -5rem auto;
+          border-radius: 1.7rem;
+          .subForm {
+            header {
+              margin-bottom: 3rem;
+              h1 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+              }
+            }
+            .first-step-form-wrapper {
+              height: 26rem;
+              justify-content: space-between;
+
+              .form-field {
+                .input-field {
+                  font-size: 1.8rem !important;
+                }
+                .err-msg {
+                  top: -2.5rem;
+                }
+                .mat-mdc-form-field-infix {
+                  padding-top: 1.9rem !important;
+                  height: 6.5rem;
+                }
+              }
+              .column-flexed-wrapper .first-step-label {
+                margin-bottom: 0.4rem;
+                font-size: 1.5rem;
+              }
+            }
+            .btns {
+              position: absolute;
+              background-color: $neutral-albaster-color;
+              bottom: 0rem;
+              left: 0rem;
+              padding: 6%;
+              width: 88%;
+              .mat-mdc-raised-button.mat-mdc-button-base {
+                width: 12rem;
+                height: 3.3rem;
+                .mdc-button__label {
+                  font-size: 1.24rem;
+                }
+              }
+            }
+
+            // second step
+            form {
+              .plans-container {
+                gap: 2rem;
+                .plans-label-container {
+                  flex-direction: column;
+                  gap: 0rem;
+                  .radio-wrapper {
+                    width: 100%;
+                    .radio-label {
+                      height: 7rem;
+                      flex-direction: row;
+
+                      img {
+                        width: 4rem;
+                        margin: 1rem;
+                      }
+
+                      .item-plan {
+                        padding-top: 1rem;
+                        font-size: 1.2rem;
+                      }
+
+                      .yearly-sub-benifits {
+                        font-size: 1.4rem;
+                      }
+                    }
+                  }
+                }
+                .toggle-switch-container {
+                  width: 100%;
+                }
+              }
+            }
+            // Ons
+
+            .ons-wrapper {
+              margin-bottom: 4rem;
+              .ons-spans-wrapper {
+                margin-left: 8rem;
+              }
+            }
+            // confirmation
+            .confirmation-wrapper {
+              .total-cost-wrapper {
+                margin: 2.5rem 0rem 0rem 2rem;
+              }
+            }
+          }
+          // success msg
+          .thanking-msg-wrapper {
+            img {
+              width: 6rem;
+            }
+            h1 {
+              margin: 2.5rem 0rem 2rem 0rem;
+            }
+            p {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Phone
+@media only screen and (max-width: 380px) {
+  html {
+    font-size: 8px;
+    body {
+      .auth-wrapper {
+        // sidebar
+        .sidebar-container {
+          ul {
+            width: 51%;
+            .step-number {
+              padding: 0.6rem 1.4rem;
+            }
+          }
+        }
+        .right-side-container {
+          height: 50%;
+          margin: -5rem auto;
+          .subForm {
+            .first-step-form-wrapper {
+              .form-field {
+                .input-field {
+                  font-size: 1.6rem !important;
+                }
+                .err-msg {
+                  top: -2rem;
+                }
+                .mat-mdc-form-field-infix {
+                  padding-top: 1.1rem !important;
+                  height: 5.5rem;
+                }
+              }
+            }
+            // second step
+            form {
+              .plans-container {
+                gap: 3rem;
+                .plans-label-container {
+                  gap: 0.5rem;
+                }
+              }
+            }
+            // Ons
+            .ons-wrapper {
+              .ons-spans-wrapper {
+                margin-left: 6rem;
+              }
+            }
+            // confirmation
+          }
+          // success msg
+          .thanking-msg-wrapper {
+            p {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

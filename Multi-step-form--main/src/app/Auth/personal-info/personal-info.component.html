@@ -1,0 +1,70 @@
+<form [formGroup]="form">
+  <div
+    class="first-step-form-wrapper column-flexed-wrapper"
+    formGroupName="personalInfoForm"
+  >
+    <!-- Name Field -->
+    <div class="name-field-wrapper column-flexed-wrapper">
+      <mat-label class="first-step-label">Name</mat-label>
+      <mat-form-field appearance="outline" class="form-field">
+        <input
+          class="input-field"
+          matInput
+          placeholder="e.g Stephen King"
+          formControlName="name"
+        />
+        <span
+          class="err-msg"
+          *ngIf="
+            !form.get('personalInfoForm.name')?.valid &&
+            form.get('personalInfoForm.name')?.touched
+          "
+        >
+          this Field is required!
+        </span>
+      </mat-form-field>
+    </div>
+    <!-- Email Field -->
+    <div class="email-field-wrapper column-flexed-wrapper">
+      <mat-label class="first-step-label">Email Address</mat-label>
+      <mat-form-field appearance="outline" class="form-field">
+        <input
+          class="input-field"
+          matInput
+          placeholder="e.g StephenKing@lorem.com"
+          formControlName="email"
+        />
+        <span
+          class="err-msg"
+          *ngIf="
+            !form.get('personalInfoForm.email')?.valid &&
+            form.get('personalInfoForm.email')?.touched
+          "
+          >Enter a valid email</span
+        >
+      </mat-form-field>
+    </div>
+    <!-- Phone Number Field -->
+    <div class="phone-field-wrapper column-flexed-wrapper">
+      <mat-label class="first-step-label">Phone Number</mat-label>
+      <mat-form-field appearance="outline" class="form-field">
+        <span class="phone-prefix" matPrefix>+ &nbsp;</span>
+        <input
+          class="input-field"
+          type="tel"
+          matInput
+          placeholder="234-567-8901"
+          formControlName="phoneNumber"
+        />
+        <span
+          class="err-msg"
+          *ngIf="
+            !form.get('personalInfoForm.phoneNumber')?.valid &&
+            form.get('personalInfoForm.phoneNumber')?.touched
+          "
+          >Phone Number is required!</span
+        >
+      </mat-form-field>
+    </div>
+  </div>
+</form>

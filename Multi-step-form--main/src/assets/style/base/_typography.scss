@@ -1,0 +1,138 @@
+.right-side-container {
+  header {
+    h1 {
+      color: $primary-marine-blue-color;
+      font: 700 4rem $primary-ubuntu-font;
+    }
+    p {
+      color: $neutral-cool-gray-color;
+      font: 1.6rem $primary-ubuntu-font;
+    }
+  }
+  .err-msg {
+    position: absolute;
+    color: red;
+    font: 500 1.2rem $primary-ubuntu-font;
+    display: block;
+    top: -3rem;
+    right: 0rem;
+  }
+  .radio-label {
+    height: 95%;
+    width: 100%;
+    border: 0.1rem solid $neutral-cool-gray-color;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    .item-plan {
+      font-size: 2rem;
+      font: 500 1.3rem $primary-ubuntu-font;
+      margin-left: 1.3rem;
+      color: $primary-marine-blue-color;
+    }
+    .item-sub-cost {
+      color: $neutral-cool-gray-color;
+      font: 1.4rem $primary-ubuntu-font;
+      margin-left: 1.3rem;
+    }
+    .yearly-sub-benifits {
+      font: 1.6rem $primary-ubuntu-font;
+      margin-left: 1.3rem;
+      color: $primary-marine-blue-color;
+      margin-bottom: 0.8rem;
+    }
+  }
+  .option-name {
+    font: 1.6rem $primary-ubuntu-font;
+    color: $primary-marine-blue-color;
+  }
+  .option-description {
+    font: 1.4rem $primary-ubuntu-font;
+    color: $neutral-cool-gray-color;
+  }
+
+  .additioanl-fees-span {
+    font: 1.4rem $primary-ubuntu-font;
+    color: $primary-purplish-blue-color;
+    align-self: center;
+  }
+  .first-sub-colored-wrapper {
+    h4 {
+      font: 500 1.6rem $primary-ubuntu-font;
+      color: $primary-marine-blue-color;
+      margin-bottom: 0.1rem;
+    }
+    a {
+      font: 1.2rem $primary-ubuntu-font;
+      color: $neutral-cool-gray-color;
+      &:hover {
+        color: $primary-purplish-blue-color;
+      }
+    }
+  }
+  .chosen-ons-name {
+    font: 1.4rem $primary-ubuntu-font;
+    color: $neutral-cool-gray-color;
+  }
+  .chosen-ons-cost {
+    color: $primary-marine-blue-color;
+    font-size: 1.4rem;
+  }
+  .sub-type {
+    font: 1.4rem $primary-ubuntu-font;
+    color: $neutral-cool-gray-color;
+  }
+  .total-cost {
+    font: 700 2rem $primary-ubuntu-font;
+    color: $primary-purplish-blue-color;
+  }
+  .first-sub-colored-wrapper {
+    h4 {
+      font: 500 1.6rem $primary-ubuntu-font;
+      color: $primary-marine-blue-color;
+      margin-bottom: 0.1rem;
+    }
+    a {
+      font: 1.2rem $primary-ubuntu-font;
+      color: $neutral-cool-gray-color;
+      &:hover {
+        color: $primary-purplish-blue-color;
+      }
+    }
+    .plan-cost {
+      font: 700 1.6rem $primary-ubuntu-font;
+      color: $primary-marine-blue-color;
+      padding-top: 1.5rem;
+    }
+  }
+  .second-sub-colored-wrapper {
+    .chosen-ons-name {
+      font: 1.4rem $primary-ubuntu-font;
+      color: $neutral-cool-gray-color;
+    }
+    .chosen-ons-cost {
+      color: $primary-marine-blue-color;
+      font-size: 1.4rem;
+    }
+  }
+  .total-cost-wrapper {
+    .sub-type {
+      font: 1.4rem $primary-ubuntu-font;
+      color: $neutral-cool-gray-color;
+    }
+    .total-cost {
+      font: 700 2rem $primary-ubuntu-font;
+      color: $primary-purplish-blue-color;
+    }
+  }
+  .thanking-msg-wrapper {
+    h1 {
+      font: 700 3rem $primary-ubuntu-font;
+      color: $primary-marine-blue-color;
+      margin: 4.5rem 0rem 2rem 0rem;
+    }
+    p {
+      color: $neutral-cool-gray-color;
+      font: 2rem $primary-ubuntu-font;
+    }
+  }
+}

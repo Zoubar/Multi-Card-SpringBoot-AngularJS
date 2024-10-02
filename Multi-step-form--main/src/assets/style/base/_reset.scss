@@ -1,0 +1,24 @@
+// override Angular material styles
+.mat-mdc-form-field-infix {
+  padding-top: 1.3rem !important;
+  min-height: 0rem !important;
+  height: 5rem;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__trailing {
+  border-width: 0.14rem !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled)
+  .mdc-notched-outline__leading {
+  border-width: 0.14rem !important;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background-color: $primary-marine-blue-color !important;
+}
+
+.mat-mdc-raised-button:disabled {
+  color: $neutral-cool-gray-color !important;
+}

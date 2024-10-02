@@ -1,0 +1,63 @@
+<form [formGroup]="form">
+  <div class="plans-container column-flexed-wrapper" formGroupName="plansForm">
+    <div class="plans-label-container">
+      <div
+        class="radio-wrapper"
+        *ngFor="let item of formservice.plansData; let i = index"
+      >
+        <input
+          [id]="i"
+          class="radio-input"
+          type="radio"
+          formControlName="plan"
+          [value]="item.plan"
+        />
+        <label [for]="i" class="radio-label column-flexed-wrapper">
+          <img src="{{ item.icon }}" />
+          <div class="label-spans column-flexed-wrapper">
+            <span class="item-plan">{{ item.plan }}</span>
+            <span class="item-sub-cost"
+              >${{
+                form.value.plansForm.checkboxSwitch === true
+                  ? item.monthlySubCost
+                  : item.yearlySubCost
+              }}/{{
+                form.value.plansForm.checkboxSwitch === false ? "yr" : "mo"
+              }}</span
+            >
+            <span
+              class="yearly-sub-benifits"
+              *ngIf="form.value.plansForm.checkboxSwitch === false"
+              >{{ item.yearlySubBenifits }}</span
+            >
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="toggle-switch-container">
+      <p
+        class="toggle-label"
+        [ngClass]="{
+          blue: form.value.plansForm.checkboxSwitch === false,
+          gray: form.value.plansForm.checkboxSwitch === true
+        }"
+      >
+        Yearly
+      </p>
+      <label class="switch">
+        <input type="checkbox" formControlName="checkboxSwitch" />
+        <span class="slider round"></span>
+      </label>
+      <p
+        class="toggle-label"
+        [ngClass]="{
+          blue: form.value.plansForm.checkboxSwitch === true,
+          gray: form.value.plansForm.checkboxSwitch === false
+        }"
+      >
+        Monthly
+      </p>
+    </div>
+  </div>
+</form>
