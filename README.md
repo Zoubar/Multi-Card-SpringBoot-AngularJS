@@ -29,7 +29,7 @@ Integration with backend services (optional).
 Installation
 Clone the repository:
 
-git clone https://github.com/yourusername/multi-step-subscription-form.git
+git clone  https://github.com/Zoubar/Multi-Card-SpringBoot-AngularJS.git
 
 Install dependencies:
 npm install
